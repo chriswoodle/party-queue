@@ -20,5 +20,8 @@
         "inlineSources": true,
         "strict": true,
         "pretty": true,
+        "lib": [
+            "es7"
+        ]
     }
 }

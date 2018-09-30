@@ -1,1 +1,2 @@
-console.log('hello world');
+process.env.DEBUG = 'app*';
+import './server';
