@@ -104,7 +104,10 @@ app.post('/songs', auth, (req: Request, res) => {
     })
 });
 
-app.post('/api/text', (req: Request, res) => {
+app.post('/api/text', bodyParser.urlencoded({ extended: true }), (req: Request, res) => {
+    debug('TEXT RECIEVED')
+
+    debug(req)
     const body = req.body['Body'];
     const from = req.body['From'];
 

@@ -85,6 +85,7 @@ export function searchForTrack(accessToken: string, searchString: string) {
         request.get(`https://api.spotify.com/v1/search?q=${encodeURI(searchString)}&type=track`, options, (error, response) => {
             debug(error)
             if (error) throw new Error(error)
+            debug(response.body)
             const body = JSON.parse(response.body)
             debug(body.tracks)
             return resolve(body.tracks.items);

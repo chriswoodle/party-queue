@@ -158,7 +158,7 @@ export class Cache {
 
     }
 
-    public voteSong(account: AccountRecord, partyId: string, songId: string, vote: number) {
+    public voteSong(account: AccountRecord, partyId: string, songId: string, vote: number, name?: string) {
         return new Promise((resolve, reject) => {
             if (vote > 1) vote = 1;
             if (vote < -1) vote = -1;
@@ -182,7 +182,7 @@ export class Cache {
             const action = {
                 songId: songId,
                 score: vote,
-                name: 'song'
+                name: name || ''
             };
             if (!song) {
                 if (vote == 1) {
